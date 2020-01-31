@@ -1,11 +1,24 @@
 import Vue from 'vue';
-import App from './App.vue';
+import VueRouter from 'vue-router';
 
-import './assets/styles/grid.styl';
+import App from './App.vue';
+import Home from './pages/Home.vue';
+import Country from './pages/Country.vue';
+
 import './assets/styles/main.styl';
 
 Vue.config.productionTip = false;
 
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  routes: [
+    { path: '/', component: Home },
+    { path: '/:country', component: Country },
+  ],
+});
+
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app');
