@@ -1,18 +1,18 @@
 <template>
   <div id="country-item">
-    <img :src="flag" :alt="imageAlt">
+    <img :src="flag" :alt="imageAlt" class="item__flag">
     <div class="country-item__info">
       <div class="info__name">
-        Germany
+        {{ country }}
       </div>
       <div>
-        <span>Population:</span> 81,000.000
+        <span>Population:</span> {{ population }}
       </div>
       <div>
-        <span>Region:</span> Europe
+        <span>Region:</span> {{ region }}
       </div>
       <div>
-        <span>Capital:</span> Berlin
+        <span>Capital:</span> {{ capital }}
       </div>
     </div>
   </div>
@@ -39,10 +39,32 @@ export default {
 <style lang="stylus" scoped>
   #country-item {
     color: var(--primary-text-color);
-    line-height: 1.6;
+    margin-top: 50px;
+    line-height: 0;
+    box-shadow: 0 0 8px 3px var(--primary-shadow-color);
+    cursor: pointer;
+
+    @media (max-width: 480px) {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    &:hover {
+      opacity: .7;
+      transition: .3s;
+    }
+
+    .item__flag {
+      width: 100%;
+      height: 200px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      object-fit: cover;
+    }
 
     .country-item__info {
       background: var(--primary-el-color);
+      line-height: 1.6;
       padding: 20px;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px;
