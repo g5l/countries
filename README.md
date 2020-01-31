@@ -1,4 +1,5 @@
-# d3-countries
+# countries
+Technical test for front-end job opportunity at d3
 
 ## Project setup
 ```
@@ -19,6 +20,3 @@ yarn build
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
