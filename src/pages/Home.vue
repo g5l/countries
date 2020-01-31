@@ -11,7 +11,7 @@
             :key="country.name"
             class="column col-3 col-lg-4 col-md-6 col-sm-12"
           >
-            <router-link to="/country">
+            <router-link :to="country.name">
               <a-country-item
                 :flag="country.flag"
                 :country="country.name"
@@ -55,5 +55,12 @@ export default {
 <style lang="stylus" scoped>
   #countries {
     background: var(--primary-background-color);
+
+    .countries__items {
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
   }
 </style>
