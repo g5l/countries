@@ -41,7 +41,7 @@ export default {
 
     h1 {
       font-weight: 800;
-      font-size: 18px;
+      font-size: 16px;
       margin: 0;
 
       @media (min-width: 480px) {
