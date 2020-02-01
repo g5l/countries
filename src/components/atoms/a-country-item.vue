@@ -24,7 +24,7 @@ export default {
   props: {
     flag: String,
     country: String,
-    population: Number,
+    population: String,
     region: String,
     capital: String,
   },
@@ -39,7 +39,7 @@ export default {
 <style lang="stylus" scoped>
   #country-item {
     color: var(--primary-text-color);
-    margin-top: 50px;
+    margin-bottom: 50px;
     line-height: 0;
     box-shadow: 0 0 8px 3px var(--primary-shadow-color);
     cursor: pointer;
