@@ -12,14 +12,14 @@
       </div>
 
       <div class="columns">
-        <div class="column col-6">
+        <div class="column col-6 col-sm-12">
           <img :src="country.flag" :alt="country.name" class="country__image">
         </div>
-        <div class="column col-6">
+        <div class="column col-6 col-sm-12">
           <div class="country__info">
             <h1>{{ country.name }}</h1>
             <div class="columns col-gapless">
-              <div class="column col-6 col-gapless">
+              <div class="column col-6 col-sm-12 col-gapless">
                 <div>
                   <span class="info__label">Native Names: </span>
                   {{ country.nativeName }}
@@ -41,7 +41,7 @@
                   {{ country.capital }}
                 </div>
               </div>
-              <div class="column col-6 col-gapless">
+              <div class="column col-6 col-sm-12 col-gapless">
                 <div>
                   <span class="info__label">Top Level Domain: </span>
                   {{ domain }}
@@ -154,11 +154,13 @@ export default {
     }
 
     .country__image {
+      max-width: 540px;
       width: 100%;
-      margin-right: 30px;
+      margin-top: auto;
+      margin-bottom: auto;
 
       @media (min-width: 480px) {
-        width: 540px;
+        margin-right: 30px;
       }
     }
 
@@ -173,6 +175,12 @@ export default {
 
       .info__bottom {
         margin-top: 60px;
+
+        .info__label {
+          @media (max-width: 480px) {
+            display: block;
+          }
+        }
 
         .bottom__border {
           font-size: 12px;
