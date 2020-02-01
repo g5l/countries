@@ -4,7 +4,9 @@
       <div class="columns">
         <div class="column col-12">
           <div class="header__content">
-            <h1>Where in the world?</h1>
+            <router-link to="/">
+              <h1>Where in the world?</h1>
+            </router-link>
             <a-layout-mode/>
           </div>
         </div>
@@ -43,7 +45,7 @@ export default {
       margin: 0;
 
       @media (min-width: 480px) {
-        font-size: 26px;
+        font-size: 24px;
       }
     }
   }
