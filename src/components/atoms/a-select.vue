@@ -26,6 +26,7 @@ export default {
     width: 100%;
     background: var(--primary-el-color);
     color: var(--primary-text-color);
+    box-shadow: 0 0 7px 1px var(--primary-shadow-color);
     border: none;
     border-radius: 5px;
     -webkit-appearance: none;
