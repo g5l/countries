@@ -1,6 +1,6 @@
 <template>
   <div id="layout-mode" @click="toggleMode()">
-    {{ changeTo }} Mode
+    <font-awesome-icon :icon="['far', 'moon']" /> {{ changeTo }} Mode
   </div>
 </template>
 
@@ -62,6 +62,8 @@ export default {
 <style lang="stylus" scoped>
   #layout-mode {
     font-weight: 600;
+    display: flex;
+    align-items: center;
     cursor: pointer;
   }
 </style>

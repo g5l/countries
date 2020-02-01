@@ -5,6 +5,7 @@
         <div class="column col-12">
           <div class="country__header">
             <a-button @click.native="back()">
+              <font-awesome-icon :icon="['far', 'moon']"/>
               Back
             </a-button>
           </div>
