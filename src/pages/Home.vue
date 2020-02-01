@@ -4,7 +4,6 @@
       <div class="countries__actions">
         <div class="columns">
           <div class="column col-5">
-            {{searchCountry}}
             <a-input
               v-model="searchCountry"
               placeholder="Search for a country..."
@@ -17,7 +16,7 @@
       </div>
       <div class="columns">
         <div
-          v-for="country in countries"
+          v-for="country in countriesFiltered"
           :key="country.name"
           class="column col-3 col-lg-4 col-md-6 col-sm-12"
         >
@@ -62,6 +61,16 @@ export default {
       const uniqueRegions = [...new Set(regions)];
       const cleanRegions = uniqueRegions.filter(el => el !== '');
       return cleanRegions;
+    },
+    countriesFiltered() {
+      if (this.searchCountry) {
+        return this.countries.filter((c) => {
+          const countryName = c.name.toLowerCase();
+          const search = this.searchCountry.toLowerCase();
+          return countryName.includes(search);
+        });
+      }
+      return this.countries;
     },
   },
   methods: {
