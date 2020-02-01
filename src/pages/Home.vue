@@ -3,14 +3,19 @@
     <div class="container grid-xl">
       <div class="countries__actions">
         <div class="columns">
-          <div class="column col-5">
+          <div class="column col-5 col-md-7 col-sm-12 col-mr-auto">
             <a-input
               v-model="searchCountry"
+              class="actions__seach-input"
               placeholder="Search for a country..."
             />
           </div>
-          <div class="column col-2 col-ml-auto">
-            <a-select :options="filterOptions"/>
+          <div class="column col-2 col-xl-4 col-sm-7">
+            <a-select
+              :options="filterOptions"
+              v-model="filterByRegion"
+            />
+            {{filterByRegion}}
           </div>
         </div>
       </div>
@@ -53,6 +58,7 @@ export default {
     return {
       countries: [],
       searchCountry: '',
+      filterByRegion: '',
     };
   },
   computed: {
@@ -63,14 +69,22 @@ export default {
       return cleanRegions;
     },
     countriesFiltered() {
-      if (this.searchCountry) {
-        return this.countries.filter((c) => {
-          const countryName = c.name.toLowerCase();
-          const search = this.searchCountry.toLowerCase();
-          return countryName.includes(search);
+      const filters = {
+        name: this.searchCountry.toLowerCase().trim(),
+        region: this.filterByRegion,
+      };
+      const filterKeys = Object.keys(filters);
+
+      // eslint-disable-next-line arrow-body-style
+      return this.countries.filter((country) => {
+        return filterKeys.every((filterKey) => {
+          console.log(filters[filterKey]);
+          if (!filters[filterKey].length) {
+            return true;
+          }
+          return filters[filterKey].includes(country[filterKey]);
         });
-      }
-      return this.countries;
+      });
     },
   },
   methods: {
@@ -90,6 +104,14 @@ export default {
 
 <style lang="stylus" scoped>
   .countries__actions {
-    padding: 40px 0;
+    padding: 25px 0 35px 0;
+
+    @media (min-width: 480px) {
+      padding: 40px 0;
+    }
+
+    .actions__seach-input {
+      margin-bottom: 30px;
+    }
   }
 </style>
