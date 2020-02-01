@@ -1,6 +1,6 @@
 <template>
-  <select class="select" v-model="selected">
-    <option disabled value="">Filter by Region</option>
+  <select class="select" :value="value" @input="$emit('input', $event.target.value)">
+    <option value="">Filter by Region</option>
     <option :value="option" v-for="option in options" :key="option">
       {{ option }}
     </option>
@@ -10,13 +10,9 @@
 <script>
 export default {
   name: 'ASelect',
-  data() {
-    return {
-      selected: '',
-    };
-  },
   props: {
     options: Array,
+    value: String,
   },
 };
 </script>
