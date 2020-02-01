@@ -15,7 +15,6 @@
               :options="filterOptions"
               v-model="filterByRegion"
             />
-            {{filterByRegion}}
           </div>
         </div>
       </div>
@@ -71,18 +70,18 @@ export default {
     countriesFiltered() {
       const filters = {
         name: this.searchCountry.toLowerCase().trim(),
-        region: this.filterByRegion,
+        region: this.filterByRegion.toLowerCase(),
       };
       const filterKeys = Object.keys(filters);
 
       // eslint-disable-next-line arrow-body-style
       return this.countries.filter((country) => {
+        console.log(filterKeys, filters);
         return filterKeys.every((filterKey) => {
-          console.log(filters[filterKey]);
           if (!filters[filterKey].length) {
             return true;
           }
-          return filters[filterKey].includes(country[filterKey]);
+          return country[filterKey].toLowerCase().includes(filters[filterKey]);
         });
       });
     },
