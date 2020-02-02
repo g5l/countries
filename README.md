@@ -1,4 +1,4 @@
-# countries
+# Countries
 Technical test for front-end job opportunity at d3
 
 ## Project setup
@@ -20,3 +20,13 @@ yarn build
 ```
 yarn lint
 ```
+
+## Improvements
+
+> Loading in requests
+> Alias in relative imports
+> Use `ul` and `li` on select, to improve your drop down layout
+> Scroll pagination to not render all items
+> When I click on links from neighboring countries, the new country does not load
+> Transition between pages
+> Add icons
