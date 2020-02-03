@@ -5,8 +5,7 @@
         <div class="column col-12">
           <div class="country__header">
             <a-button @click.native="back()">
-              <font-awesome-icon :icon="['far', 'moon']"/>
-              Back
+              <font-awesome-icon :icon="['fas', 'long-arrow-alt-left']" /> Back
             </a-button>
           </div>
         </div>
@@ -140,6 +139,12 @@ export default {
     },
     back() {
       this.$router.go(-1);
+    },
+  },
+  watch: {
+    $route(to) {
+      const path = to.path.replace('/', '');
+      this.fetchCountry(path);
     },
   },
   mounted() {
