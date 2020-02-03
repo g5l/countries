@@ -1,6 +1,9 @@
 # Countries
 Technical test for front-end job opportunity at d3
 
+Netlify Url: happy-torvalds-5f4f3b.netlify.com
+Custom Url: http://g5l.com.br/
+
 ## Project setup
 ```
 yarn install
