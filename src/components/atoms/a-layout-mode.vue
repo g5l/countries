@@ -1,6 +1,6 @@
 <template>
   <div id="layout-mode" @click="toggleMode()">
-    <font-awesome-icon :icon="['far', 'moon']" /> {{ changeTo }} Mode
+    <font-awesome-icon class="layout-icon" :icon="['fas', 'moon']" /> {{ changeTo }} Mode
   </div>
 </template>
 
@@ -65,5 +65,9 @@ export default {
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    .layout-icon {
+      padding-right: 5px;
+    }
   }
 </style>
